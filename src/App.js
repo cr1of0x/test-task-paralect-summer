@@ -1,5 +1,5 @@
-const App = () => {
-  return <div>Test task</div>;
-};
+import { MainPage } from "./components/pages/MainPage/MainPage";
 
-export default App;
+export const App = () => {
+  return <MainPage />;
+};
