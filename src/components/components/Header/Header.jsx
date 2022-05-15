@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getUser } from "../../../redux/thunks/user";
+import { getUserAndRepos } from "../../../redux/thunks/user";
 
 export const Header = () => {
   const [user, setUser] = useState("");
@@ -8,7 +8,7 @@ export const Header = () => {
   const dispatch = useDispatch();
 
   const findUserHandler = () => {
-    dispatch(getUser(user));
+    dispatch(getUserAndRepos(user));
   };
 
   const onChangeHandler = (e) => {
@@ -21,14 +21,12 @@ export const Header = () => {
         onChange={(e) => {
           onChangeHandler(e);
         }}
-      />
-      <button
-        onClick={() => {
-          findUserHandler();
+        onKeyPress={(e) => {
+          if (e.key === "Enter") {
+            findUserHandler();
+          }
         }}
-      >
-        Find
-      </button>
+      />
     </div>
   );
 };

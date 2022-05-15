@@ -3,7 +3,7 @@ import { Repository } from "../Repository/Repository";
 
 export const UserRepos = () => {
   const repos = useSelector((state) => {
-    return state.repos.repos;
+    return state.user.repos;
   });
 
   return (

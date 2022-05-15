@@ -1,15 +1,18 @@
 import * as api from "../../api/index.js";
 import { hideLoader, showLoader } from "../actions/actions.js";
+import { SET_USER_AND_REPOS } from "../constants/actionTypes.js";
 
-export const getUser = (username) => async (dispatch) => {
+export const getUserAndRepos = (username) => async (dispatch) => {
   try {
     const user = await api.getUser(username);
-    dispatch({ type: "SET_USER", data: user });
     const repos = await api.getUserRepos(username);
-    dispatch({ type: "SET_REPOS", data: repos });
+    console.log(repos);
+    dispatch({ type: SET_USER_AND_REPOS, data: { user, repos } });
   } catch (error) {
-    dispatch({ type: "SET_USER", data: null });
-    dispatch({ type: "SET_REPOS", data: null });
+    dispatch({
+      type: SET_USER_AND_REPOS,
+      data: { user: null, repos: null },
+    });
     throw error;
   }
 };
