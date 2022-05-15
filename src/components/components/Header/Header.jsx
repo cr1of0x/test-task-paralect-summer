@@ -1,32 +1,20 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getUserAndRepos } from "../../../redux/thunks/user";
+import { FaGithub } from "react-icons/fa";
+import { HeaderInput } from "../HeaderInput/HeaderInput";
 
 export const Header = () => {
-  const [user, setUser] = useState("");
-
   const dispatch = useDispatch();
 
-  const findUserHandler = () => {
+  const findUserHandler = (user) => {
     dispatch(getUserAndRepos(user));
-  };
-
-  const onChangeHandler = (e) => {
-    setUser(e.target.value);
   };
 
   return (
     <div>
-      <input
-        onChange={(e) => {
-          onChangeHandler(e);
-        }}
-        onKeyPress={(e) => {
-          if (e.key === "Enter") {
-            findUserHandler();
-          }
-        }}
-      />
+      <FaGithub />
+      <HeaderInput findUserHandler={findUserHandler} />
     </div>
   );
 };

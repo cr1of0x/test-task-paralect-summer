@@ -5,7 +5,7 @@ import styles from "./MainPage.module.css";
 
 export const MainPage = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <Header />
       <div className={styles.about}>
         <UserDetails />
