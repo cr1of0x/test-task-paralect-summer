@@ -1,8 +1,8 @@
-import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getUserAndRepos } from "../../../redux/thunks/user";
-import { FaGithub } from "react-icons/fa";
 import { HeaderInput } from "../HeaderInput/HeaderInput";
+import logo from "../../../assets/images/github.png";
+import styles from "./Header.module.css";
 
 export const Header = () => {
   const dispatch = useDispatch();
@@ -12,8 +12,8 @@ export const Header = () => {
   };
 
   return (
-    <div>
-      <FaGithub />
+    <div className={styles.container}>
+      <img alt="" src={logo} />
       <HeaderInput findUserHandler={findUserHandler} />
     </div>
   );
