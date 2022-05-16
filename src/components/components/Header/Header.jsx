@@ -1,34 +1,20 @@
-import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getUser } from "../../../redux/thunks/user";
+import { getUserAndRepos } from "../../../redux/thunks/user";
+import { HeaderInput } from "../HeaderInput/HeaderInput";
+import logo from "../../../assets/images/github.png";
+import styles from "./Header.module.css";
 
 export const Header = () => {
-  const [user, setUser] = useState("");
-
   const dispatch = useDispatch();
 
-  const findUserHandler = () => {
-    dispatch(getUser(user));
-  };
-
-  const onChangeHandler = (e) => {
-    setUser(e.target.value);
+  const findUserHandler = (user) => {
+    dispatch(getUserAndRepos(user));
   };
 
   return (
-    <div>
-      <input
-        onChange={(e) => {
-          onChangeHandler(e);
-        }}
-      />
-      <button
-        onClick={() => {
-          findUserHandler();
-        }}
-      >
-        Find
-      </button>
+    <div className={styles.container}>
+      <img alt="" src={logo} />
+      <HeaderInput findUserHandler={findUserHandler} />
     </div>
   );
 };
