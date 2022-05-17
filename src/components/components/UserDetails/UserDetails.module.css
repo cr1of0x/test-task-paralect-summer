@@ -1,0 +1,27 @@
+.container {
+    margin-left: 57px;
+    margin-top: 39px;
+    display: flex;
+    flex-flow: column;
+}
+
+.avatar {
+    width: 280px;
+    height: 280px;
+    border-radius: 140px;
+}
+
+.name {
+    margin-top: 29px;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    font-size: 26px;
+}
+
+.awrapper {
+    margin-top: 12px;
+}
+
+.login, .login:hover, .login:focus, .login:active {
+ color:#0064EB
+}

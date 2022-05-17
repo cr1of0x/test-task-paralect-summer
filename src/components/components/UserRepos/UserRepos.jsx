@@ -7,7 +7,7 @@ export const UserRepos = () => {
   });
 
   return (
-    <ul>
+    <ul className="">
       {repos ? (
         repos.data.map((repo) => {
           return <Repository key={repo.id} name={repo.name} />;
