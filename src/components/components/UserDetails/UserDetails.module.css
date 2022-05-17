@@ -22,6 +22,10 @@
     margin-top: 12px;
 }
 
+.login {
+    font-size: 18px;
+    font-family: Inter, sans-serif;
+}
 .login, .login:hover, .login:focus, .login:active {
  color:#0064EB
 }

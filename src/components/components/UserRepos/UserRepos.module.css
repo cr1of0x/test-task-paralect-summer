@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.wrapper {
+    margin-left: 96px;
+    margin-top: 28px;
+}
+
+.count {
+   margin-bottom: 5px;
+   font-family: Inter, sans-serif;
+   font-weight: 600;
+   font-size: 32px;
+   line-height: 42px;
+}
