@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import styles from "./UserDetails.module.css";
 
 export const UserDetails = () => {
   const user = useSelector((state) => {
@@ -8,17 +9,28 @@ export const UserDetails = () => {
   console.log(user);
 
   return (
-    <div>
+    <div className={styles.container}>
       {user ? (
-        <div>
-          <img width="250px" height="250px" alt="" src={user.data.avatar_url} />
-          {user.data.name ? <div>{user.data.name}</div> : <div>Unknown</div>}
-          <a href={user.data.html_url} target="_blank" rel="noreferrer">
-            {user.data.login}
-          </a>
+        <>
+          <img alt="" src={user.data.avatar_url} className={styles.avatar} />
+          {user.data.name ? (
+            <div className={styles.name}>{user.data.name}</div>
+          ) : (
+            <div className={styles.name}>Unknown</div>
+          )}
+          <div className={styles.awrapper}>
+            <a
+              href={user.data.html_url}
+              target="_blank"
+              rel="noreferrer"
+              className={styles.login}
+            >
+              {user.data.login}
+            </a>
+          </div>
           <div>Followers: {user.data.followers}</div>
           <div>Following: {user.data.following}</div>
-        </div>
+        </>
       ) : (
         <div>No such user</div>
       )}
