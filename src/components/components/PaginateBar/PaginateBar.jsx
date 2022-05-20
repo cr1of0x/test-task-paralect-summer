@@ -9,6 +9,7 @@ export const PaginateBar = ({ handlePageClick, reposAmount }) => {
   const pageCount = Math.ceil(reposAmount / 4);
 
   useEffect(() => {
+    setPageFrom(1);
     if (reposAmount > 4) {
       setPageTo(4);
     } else {
@@ -17,9 +18,12 @@ export const PaginateBar = ({ handlePageClick, reposAmount }) => {
   }, [reposAmount]);
 
   const handlePageClickWithFromTo = (data) => {
+    const activePage = data.selected + 1;
     handlePageClick(data);
-    setPageFrom((data.selected + 1) * 4 - 3);
-    setPageTo((data.selected + 1) * 4);
+    setPageFrom(activePage * 4 - 3);
+    if (pageCount === activePage) {
+      setPageTo(reposAmount);
+    } else setPageTo(activePage * 4);
   };
 
   return (

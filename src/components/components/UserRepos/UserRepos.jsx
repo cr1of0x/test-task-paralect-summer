@@ -14,6 +14,7 @@ export const UserRepos = () => {
   const repos = user.repos;
   const userinfo = user.user;
   const reposAmount = userinfo ? userinfo.data.public_repos : 0;
+  const reposLength = repos.data.length;
 
   const handlePageClick = (data) => {
     const user = userinfo.data.login;
@@ -24,7 +25,7 @@ export const UserRepos = () => {
   return (
     <div className={styles.wrapper}>
       <ul className={styles.container}>
-        {repos.data.length !== 0 ? (
+        {reposLength !== 0 ? (
           <div>
             <div className={styles.count}>Repositories ({reposAmount})</div>
             {repos.data.map((repo) => {
