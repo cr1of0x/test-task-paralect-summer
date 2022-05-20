@@ -4,6 +4,7 @@
     width: 877px;
     background-color: #fff;
     margin-top: 24px;
+    border-radius: 6px;
 }
 
 .container:first-child {

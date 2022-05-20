@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import styles from "./PaginateBar.module.css";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 export const PaginateBar = ({ handlePageClick, reposAmount }) => {
   const [pageFrom, setPageFrom] = useState(1);
@@ -8,7 +9,7 @@ export const PaginateBar = ({ handlePageClick, reposAmount }) => {
   const pageCount = Math.ceil(reposAmount / 4);
 
   useEffect(() => {
-    if (reposAmount >= 4) {
+    if (reposAmount > 4) {
       setPageTo(4);
     } else {
       setPageTo(reposAmount);
@@ -22,18 +23,20 @@ export const PaginateBar = ({ handlePageClick, reposAmount }) => {
   };
 
   return (
-    <div>
-      <div>
+    <div className={styles.container}>
+      <div className={styles.itemsCount}>
         {pageFrom}-{pageTo} of {reposAmount} items
       </div>
       <ReactPaginate
-        previousLabel={"<"}
-        nextLabel={">"}
+        previousLabel={
+          <FaChevronLeft className={styles.previousLinkFontAwesome} />
+        }
+        nextLabel={<FaChevronRight className={styles.nextLinkFontAwesome} />}
         breakLabel={"..."}
         pageCount={pageCount}
         marginPagesDisplayed={1}
         onPageChange={handlePageClickWithFromTo}
-        containerClassName={styles.container}
+        containerClassName={styles.paginateContainer}
         pageClassName={styles.page}
         pageLinkClassName={styles.pageLink}
         previousClassName={styles.previous}
@@ -43,6 +46,9 @@ export const PaginateBar = ({ handlePageClick, reposAmount }) => {
         breakClassName={styles.break}
         breakLinkClassName={styles.breakLink}
         activeClassName={styles.active}
+        activeLinkClassName={styles.activeLink}
+        disabledClassName={styles.disabled}
+        disabledLinkClassName={styles.disabledLink}
       />
     </div>
   );

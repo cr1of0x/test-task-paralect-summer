@@ -1,6 +1,7 @@
 .container {
     margin-left: 57px;
     margin-top: 39px;
+    width: 293px;
     display: flex;
     flex-flow: column;
 }
@@ -26,6 +27,49 @@
     font-size: 18px;
     font-family: Inter, sans-serif;
 }
+
 .login, .login:hover, .login:focus, .login:active {
  color:#0064EB
+}
+
+.followContainer {
+    display: flex;
+    margin-top: 25.24px;
+}
+
+.followersContainer{
+    display: flex;
+}
+
+.followersIcon{
+    width: 24px;
+    height: 24px;
+    color:#DADADA;
+}
+
+.followersText{
+    margin-left: 9px;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: black;
+}
+
+.followingContainer{
+    display: flex;
+}
+
+.followingIcon{
+    width: 19px;
+    height: 19px;
+    margin-left: 20px;
+    color:#DADADA;
+}
+
+.followingText{
+    margin-left: 9px;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: black;
 }

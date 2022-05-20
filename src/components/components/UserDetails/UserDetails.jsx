@@ -1,12 +1,15 @@
 import { useSelector } from "react-redux";
 import styles from "./UserDetails.module.css";
+import { FaUser, FaUserFriends } from "react-icons/fa";
 
 export const UserDetails = () => {
   const user = useSelector((state) => {
     return state.user.user;
   });
 
-  console.log(user);
+  const followersAndFollowingCalculate = (number) => {
+    return number > 1000 ? (number / 1000).toFixed(1) + "k" : number;
+  };
 
   return (
     <div className={styles.container}>
@@ -28,8 +31,20 @@ export const UserDetails = () => {
               {user.data.login}
             </a>
           </div>
-          <div>Followers: {user.data.followers}</div>
-          <div>Following: {user.data.following}</div>
+          <div className={styles.followContainer}>
+            <div className={styles.followersContainer}>
+              <FaUserFriends className={styles.followersIcon} />
+              <div className={styles.followersText}>
+                {followersAndFollowingCalculate(user.data.followers)} followers
+              </div>
+            </div>
+            <div className={styles.followingContainer}>
+              <FaUser className={styles.followingIcon} />
+              <div className={styles.followingText}>
+                {followersAndFollowingCalculate(user.data.following)} following
+              </div>
+            </div>
+          </div>
         </>
       ) : (
         <div>No such user</div>

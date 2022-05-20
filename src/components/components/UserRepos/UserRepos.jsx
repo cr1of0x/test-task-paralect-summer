@@ -14,7 +14,6 @@ export const UserRepos = () => {
   const repos = user.repos;
   const userinfo = user.user;
   const reposAmount = userinfo ? userinfo.data.public_repos : 0;
-  console.log(reposAmount);
 
   const handlePageClick = (data) => {
     const user = userinfo.data.login;
