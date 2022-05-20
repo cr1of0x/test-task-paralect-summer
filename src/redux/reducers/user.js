@@ -1,14 +1,16 @@
-import { SET_USER_AND_REPOS } from "../constants/actionTypes";
+import { SET_USER, SET_REPOS } from "../constants/actionTypes";
 
 const initialState = {
   user: null,
-  repos: null,
+  repos: { data: [] },
 };
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_USER_AND_REPOS:
-      return { user: action.data.user, repos: action.data.repos };
+    case SET_USER:
+      return { ...state, user: action.data.user };
+    case SET_REPOS:
+      return { ...state, repos: action.data.repos };
     default:
       return state;
   }

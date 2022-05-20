@@ -1,0 +1,18 @@
+.container{
+    display: flex;
+}
+.page{
+    margin-left: 22px;
+    margin-right: 22px;
+}
+
+.pageLink{}
+.previous{}
+.previousLink{}
+.next{}
+.nextLink{}
+.break{}
+.breakLink{}
+.active{
+    color: red;
+}
