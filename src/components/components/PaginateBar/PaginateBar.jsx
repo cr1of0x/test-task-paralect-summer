@@ -19,7 +19,9 @@ export const PaginateBar = ({ handlePageClick, reposAmount }) => {
 
   const handlePageClickWithFromTo = (data) => {
     const activePage = data.selected + 1;
+
     handlePageClick(data);
+
     setPageFrom(activePage * 4 - 3);
     if (pageCount === activePage) {
       setPageTo(reposAmount);
