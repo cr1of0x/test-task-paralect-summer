@@ -1,0 +1,21 @@
+.container{
+    width: 210px;
+    margin: auto;
+    margin-top: 220px;
+    display: flex;
+    flex-flow: column;
+}
+
+.image{
+    width: 64px;
+    align-self: center;
+}
+
+.text {
+    margin-top: 47px;
+    font-family: Inter, sans-serif;
+    font-weight: 400px;
+    font-size: 22px;
+    line-height: 30.8px;
+    color: #808080;
+}

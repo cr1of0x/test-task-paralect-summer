@@ -1,0 +1,23 @@
+.container {
+    width: 156px;
+    margin: auto;
+    margin-top: 229px;
+    display: flex;
+    flex-flow: column;
+}
+
+.icon {
+    width: 65px;
+    height: 74px;
+    color: #808080;
+    align-self: center;
+}
+
+.text {
+    margin-top: 42px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 30.8px;
+    color: #808080;
+}

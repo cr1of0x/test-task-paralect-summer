@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUserRepos } from "../../../redux/thunks/user";
 import { PaginateBar } from "../PaginateBar/PaginateBar";
 import { Repository } from "../Repository/Repository";
+import { ReposNotFound } from "../ReposNotFound/ReposNotFound";
 import styles from "./UserRepos.module.css";
 
 export const UserRepos = () => {
@@ -45,7 +46,7 @@ export const UserRepos = () => {
             />
           </div>
         ) : (
-          <div>No such repos</div>
+          <ReposNotFound />
         )}
       </ul>
     </div>
