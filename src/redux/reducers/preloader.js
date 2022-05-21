@@ -7,9 +7,9 @@ const initialState = {
 const preloaderReducer = (state = initialState, action) => {
   switch (action.type) {
     case SHOW_LOADER:
-      return { ...state, loading: true };
+      return { loading: true };
     case HIDE_LOADER:
-      return { ...state, loading: false };
+      return { loading: false };
     default:
       return state;
   }

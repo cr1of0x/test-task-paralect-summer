@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { getUserAndRepos } from "../../../redux/thunks/user";
+import { getUser, getUserRepos } from "../../../redux/thunks/user";
 import { HeaderInput } from "../HeaderInput/HeaderInput";
 import logo from "../../../assets/images/github.png";
 import styles from "./Header.module.css";
@@ -8,7 +8,8 @@ export const Header = () => {
   const dispatch = useDispatch();
 
   const findUserHandler = (user) => {
-    dispatch(getUserAndRepos(user));
+    dispatch(getUser(user));
+    dispatch(getUserRepos(user, 1));
   };
 
   return (
