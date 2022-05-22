@@ -3,5 +3,24 @@
 }
 
 .container {
- 
+
+}
+
+@media (max-width:950px) {
+    .about {
+        display: flex;
+        flex-flow: column;
+    }
+}
+
+@media (max-width:600px) {
+    .about {
+        max-width: 400px;
+    }
+}
+
+@media (max-width:400px) {
+    .about {
+        max-width: 320px;
+    }
 }

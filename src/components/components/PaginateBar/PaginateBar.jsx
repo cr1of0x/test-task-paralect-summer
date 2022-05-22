@@ -6,7 +6,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 export const PaginateBar = ({ handlePageClick, reposAmount }) => {
   const [pageFrom, setPageFrom] = useState(1);
   const [pageTo, setPageTo] = useState(0);
-  const pageCount = Math.ceil(reposAmount / 4);
+  const PAGE_COUNT = Math.ceil(reposAmount / 4);
 
   useEffect(() => {
     setPageFrom(1);
@@ -23,7 +23,7 @@ export const PaginateBar = ({ handlePageClick, reposAmount }) => {
     handlePageClick(data);
 
     setPageFrom(activePage * 4 - 3);
-    if (pageCount === activePage) {
+    if (PAGE_COUNT === activePage) {
       setPageTo(reposAmount);
     } else setPageTo(activePage * 4);
   };
@@ -39,7 +39,7 @@ export const PaginateBar = ({ handlePageClick, reposAmount }) => {
         }
         nextLabel={<FaChevronRight className={styles.nextLinkFontAwesome} />}
         breakLabel={"..."}
-        pageCount={pageCount}
+        pageCount={PAGE_COUNT}
         marginPagesDisplayed={1}
         onPageChange={handlePageClickWithFromTo}
         containerClassName={styles.paginateContainer}

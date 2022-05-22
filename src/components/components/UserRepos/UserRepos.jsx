@@ -1,35 +1,31 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getUserRepos } from "../../../redux/thunks/user";
 import { PaginateBar } from "../PaginateBar/PaginateBar";
 import { Repository } from "../Repository/Repository";
 import { ReposNotFound } from "../ReposNotFound/ReposNotFound";
 import styles from "./UserRepos.module.css";
 
-export const UserRepos = () => {
+export const UserRepos = ({ user }) => {
   const dispatch = useDispatch();
 
-  const user = useSelector((state) => {
-    return state.user;
-  });
-
-  const repos = user.repos;
-  const userinfo = user.user;
-  const reposAmount = userinfo ? userinfo.data.public_repos : 0;
-  const reposLength = repos.data.length;
+  const REPOS = user.repos;
+  const USER_INFO = user.user;
+  const REPOS_AMOUNT = USER_INFO ? USER_INFO.data.public_repos : 0;
+  const REPOS_LENGTH = REPOS.data.length;
 
   const handlePageClick = (data) => {
-    const user = userinfo.data.login;
+    const username = USER_INFO.data.login;
     const page = data.selected + 1;
-    dispatch(getUserRepos(user, page));
+    dispatch(getUserRepos(username, page));
   };
 
   return (
     <div className={styles.wrapper}>
       <ul className={styles.container}>
-        {reposLength !== 0 ? (
-          <div>
-            <div className={styles.count}>Repositories ({reposAmount})</div>
-            {repos.data.map((repo) => {
+        {REPOS_LENGTH !== 0 ? (
+          <div className={styles.reposAdaptive}>
+            <div className={styles.count}>Repositories ({REPOS_AMOUNT})</div>
+            {REPOS.data.map((repo) => {
               return (
                 <Repository
                   key={repo.id}
@@ -41,8 +37,8 @@ export const UserRepos = () => {
             })}
             <PaginateBar
               handlePageClick={handlePageClick}
-              reposAmount={reposAmount}
-              userinfo={userinfo}
+              reposAmount={REPOS_AMOUNT}
+              userinfo={USER_INFO}
             />
           </div>
         ) : (

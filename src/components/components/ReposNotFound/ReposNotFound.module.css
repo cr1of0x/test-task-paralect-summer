@@ -21,3 +21,33 @@
     line-height: 30.8px;
     color: #808080;
 }
+
+@media (max-width:1200px) {
+    .container{
+        margin-left: 300px;
+    }
+}
+
+@media (max-width:1000px) {
+    .container{
+        margin-left: 200px;
+    }
+}
+
+@media (max-width:950px) {
+    .container{
+        margin-top: 50px;
+    }
+}
+
+@media (max-width:600px) {
+    .container{
+        margin-left: 100px;
+    }
+}
+
+@media (max-width:440px) {
+    .container{
+        margin-left: 50px;
+    }
+}

@@ -6,7 +6,6 @@ import {
   showLoader,
   userNotFound,
 } from "../actions/actions.js";
-import { SET_REPOS } from "../constants/actionTypes.js";
 
 export const getUser = (username) => async (dispatch) => {
   try {

@@ -17,7 +17,7 @@ export const MainPage = () => {
       {user.user ? (
         <div className={styles.about}>
           <UserDetails user={user} />
-          <UserRepos />
+          <UserRepos user={user} />
         </div>
       ) : user.isFound ? (
         <InitialState />

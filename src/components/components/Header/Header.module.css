@@ -9,3 +9,9 @@
     width: 41px;
     height: 40px;
 }
+
+@media (max-width:400px) {
+    .container {
+     padding-left: 10px;
+    }
+}
