@@ -31,4 +31,21 @@
     margin: 8px 0 8px 19px;
     display: flex;
     align-items: center;
+   
+}
+
+@media (max-width:690px) {
+    .wrapper {
+        width: 256px;
+    }
+
+}
+
+@media (max-width:375px) {
+    .wrapper {
+        margin-left: 3px;
+    }
+    .input {
+    }
+
 }

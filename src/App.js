@@ -1,8 +1,9 @@
 import { MainPage } from "./components/pages/MainPage/MainPage";
 import "./App.css";
 import { Preloader } from "./components/components/Preloader/Preloader";
+import { withProvider } from "./hocs/withProvider";
 
-export const App = () => {
+const App = () => {
   return (
     <>
       <MainPage />
@@ -10,3 +11,5 @@ export const App = () => {
     </>
   );
 };
+
+export default withProvider(App);

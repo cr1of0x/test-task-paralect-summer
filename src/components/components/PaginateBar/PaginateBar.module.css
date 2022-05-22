@@ -98,3 +98,16 @@
     color: #808080;
     cursor: default;
 }
+
+@media (max-width: 600px) {
+    .container {
+        max-width: 300px;
+    }
+
+    .itemsCount {
+        margin-right: 10px;
+        font-size: 12
+        px;
+
+    }
+}

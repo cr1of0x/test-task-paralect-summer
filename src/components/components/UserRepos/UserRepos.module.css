@@ -15,3 +15,34 @@
    font-size: 32px;
    line-height: 42px;
 }
+
+@media (max-width:1366px) {
+    
+}
+
+@media (max-width:950px) {
+    .wrapper {
+        width: 600px;
+        margin: auto;
+    }
+    .reposAdaptive {
+        display: flex;
+        flex-flow: column;
+       align-items: center;
+    }
+    .count {
+        margin-top: 10px;
+        margin-bottom: 0;
+        font-size: 20px;
+    }
+    
+}
+
+@media (max-width:600px) {
+    .wrapper {
+        width: 320px;
+        margin: auto;
+    }
+    
+}
+

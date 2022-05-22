@@ -44,7 +44,7 @@
 .followersIcon{
     width: 24px;
     height: 24px;
-    color:#DADADA;
+    color:#808080;
 }
 
 .followersText{
@@ -63,7 +63,7 @@
     width: 19px;
     height: 19px;
     margin-left: 20px;
-    color:#DADADA;
+    color:#808080;
 }
 
 .followingText{
@@ -72,4 +72,164 @@
     font-size: 16px;
     line-height: 24px;
     color: black;
+}
+
+@media (max-width:950px) {
+    .container {
+    margin: auto;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    width: 780px;
+    margin-top: 10px;
+    } 
+    .userDetailsAdaptive {
+        margin-left: 30px;
+    }
+    .name {
+        font-size: 40px;
+    
+    }
+    .login {
+        font-size: 40px;
+    }
+    .followersText {
+        font-size: 20px;
+    }
+    .followingText {
+        font-size: 20px;
+    }
+
+}
+
+@media (max-width:860px) {
+    .container {
+    width: 660px;
+    }
+
+
+}
+
+@media (max-width:800px) {
+    .container {
+    width: 600px;
+    }
+    .avatar {
+       width: 220px;
+       height: 220px;}
+
+    .followersText {
+        font-size: 15px;
+    }
+    .followingText {
+        font-size: 15px;
+    }
+
+}
+
+@media (max-width:690px) {
+    .container {
+    width: 400px;
+    }
+    .avatar {
+       width: 220px;
+       height: 220px;}
+
+    .followersText {
+        font-size: 15px;
+    }
+    .followingText {
+        font-size: 15px;
+    }
+
+}
+
+@media (max-width:600px) {
+    .container {
+    width: 320px;
+    margin-left: 10px;
+    }
+    .avatar {
+       width: 120px;
+       height: 120px;}
+
+    .followersText {
+        font-size: 15px;
+        margin: auto;
+    }
+    .followingText {
+        font-size: 15px;
+        margin: auto;
+    }
+    .name {
+        font-size: 20px;
+        margin: auto;
+    
+    }
+    .login {
+        font-size: 20px;
+        margin: auto;
+    }
+
+}
+
+@media (max-width:600px) {
+    .container {
+    width: 400px;
+    margin-left: 30px;
+    }
+    .avatar {
+       width: 120px;
+       height: 120px;}
+
+    .followersText {
+        font-size: 15px;
+        margin: auto;
+    }
+    .followingText {
+        font-size: 15px;
+        margin: auto;
+    }
+    .name {
+        font-size: 20px;
+        margin: auto;
+    
+    }
+    .login {
+        font-size: 20px;
+        margin: auto;
+    }
+
+}
+
+@media (max-width:440px) {
+    .container {
+    width: 320px;
+    margin-left: 2px;
+    }
+    .userDetailsAdaptive {
+        margin-left: 5px;
+    }
+    .avatar {
+       width: 100px;
+       height: 100px;}
+
+    .followersText {
+        font-size: 5px;
+        margin: auto;
+    }
+    .followingText {
+        font-size: 5px;
+        margin: auto;
+    }
+    .name {
+        font-size: 15px;
+        margin: auto;
+    
+    }
+    .login {
+        font-size: 15px;
+        margin: auto;
+    }
+
 }
